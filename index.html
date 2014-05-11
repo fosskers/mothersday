@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><title>Mom</title><script type="text/javascript" src="elm-runtime.js"></script><script type="text/javascript">Elm.Main = Elm.Main || {};
+Elm.Main.make = function (_elm) {
+   "use strict";
+   _elm.Main = _elm.Main || {};
+   if (_elm.Main.values)
+   return _elm.Main.values;
+   var _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   _E = _N.Error.make(_elm),
+   _J = _N.JavaScript.make(_elm),
+   $moduleName = "Main";
+   var Basics = Elm.Basics.make(_elm);
+   var Color = Elm.Color.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Collage = Elm.Graphics.Collage.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Element = Elm.Graphics.Element.make(_elm);
+   var List = Elm.List.make(_elm);
+   var Maybe = Elm.Maybe.make(_elm);
+   var Native = Native || {};
+   Native.Ports = Elm.Native.Ports.make(_elm);
+   var Signal = Elm.Signal.make(_elm);
+   var String = Elm.String.make(_elm);
+   var Text = Elm.Text.make(_elm);
+   var Time = Elm.Time.make(_elm);
+   var Window = Elm.Window.make(_elm);
+   var _op = {};
+   var background = F2(function (w,
+   h) {
+      return A3(Graphics.Element.container,
+      w,
+      h,
+      Graphics.Element.middle)(A3(Graphics.Element.image,
+      w,
+      h,
+      "/mountains.jpg"));
+   });
+   var center = F2(function (w,e) {
+      return A4(Graphics.Element.container,
+      w,
+      Graphics.Element.heightOf(e),
+      Graphics.Element.middle,
+      e);
+   });
+   var message = Text.markdown("<div style=\"height:0;width:0;\">&nbsp;</div><h1 id=\"happy-mothers-day-mom\"><span style=\"color:red;\">Happy Mothers Day, Mom!</span></h1><div style=\"height:0;width:0;\">&nbsp;</div>",
+   "15:11");
+   var mom = A3(Graphics.Element.image,
+   285,
+   304,
+   "/mom.jpg");
+   var hearts = A3(Graphics.Element.image,
+   370,
+   237,
+   "/hearts.gif");
+   var pics = A2(Graphics.Element.flow,
+   Graphics.Element.left,
+   _J.toList([hearts,mom,hearts]));
+   var content = function (w) {
+      return A2(Graphics.Element.flow,
+      Graphics.Element.down,
+      _J.toList([A2(center,w,pics)
+                ,A2(center,w,message)]));
+   };
+   var render = function (_v0) {
+      return function () {
+         switch (_v0.ctor)
+         {case "_Tuple2":
+            return Graphics.Element.layers(_J.toList([A2(background,
+                                                     _v0._0,
+                                                     _v0._1)
+                                                     ,A3(Graphics.Element.container,
+                                                     _v0._0,
+                                                     _v0._1,
+                                                     Graphics.Element.middle)(content(_v0._0))]));}
+         _E.Case($moduleName,
+         "between lines 29 and 31");
+      }();
+   };
+   var main = A2(Signal._op["<~"],
+   render,
+   Window.dimensions);
+   _elm.Main.values = {_op: _op
+                      ,hearts: hearts
+                      ,mom: mom
+                      ,pics: pics
+                      ,message: message
+                      ,center: center
+                      ,content: content
+                      ,background: background
+                      ,render: render
+                      ,main: main};
+   return _elm.Main.values;
+};</script></head><body><script type="text/javascript">Elm.fullscreen(Elm.Main)</script><noscript></noscript></body></html>
