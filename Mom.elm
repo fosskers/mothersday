@@ -6,7 +6,7 @@ hearts : Element
 hearts = image 370 237 "hearts.gif"
 
 mom : Element
-mom = image 285 304 "mom.jpg"
+mom = image 285 304 "https://raw.githubusercontent.com/fosskers/mothersday/gh-pages/mom.jpg"
 
 pics : Element
 pics = flow left [ hearts, mom, hearts ]
