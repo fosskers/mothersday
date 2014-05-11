@@ -3,10 +3,10 @@
 import Window
 
 hearts : Element
-hearts = image 370 237 "/hearts.gif"
+hearts = image 370 237 "hearts.gif"
 
 mom : Element
-mom = image 285 304 "/mom.jpg"
+mom = image 285 304 "mom.jpg"
 
 pics : Element
 pics = flow left [ hearts, mom, hearts ]
@@ -23,7 +23,7 @@ content : Int -> Element
 content w = flow down [ center w pics, center w message ]
 
 background : Int -> Int -> Element
-background w h = container w h middle <| image w h "/mountains.jpg"
+background w h = container w h middle <| image w h "mountains.jpg"
 
 render : (Int,Int) -> Element
 render (w,h) = layers [ background w h
