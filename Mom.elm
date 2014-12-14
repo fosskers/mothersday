@@ -1,6 +1,11 @@
 -- A Mother's Day site for Mom
 
+import Graphics.Element (..)
+import Markdown
+import Signal (..)
 import Window
+
+---
 
 hearts : Element
 hearts = image 370 237 "hearts.gif"
@@ -12,9 +17,9 @@ pics : Element
 pics = flow left [ hearts, mom, hearts ]
 
 message : Element
-message = [markdown|
+message = Markdown.toElement """
 # <span style="color:red;">Happy Mothers Day, Mom!</span>
-|]
+"""
 
 center : Int -> Element -> Element
 center w e = container w (heightOf e) middle e
